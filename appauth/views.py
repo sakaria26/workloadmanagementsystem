@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home_view(request):
-    return HttpResponse("<h1> Hello, World </h1>")
+    return render(request, 'appauth/home.html', {})
 
 def login(request):
     return HttpResponse("<h1> Login </h1>")
