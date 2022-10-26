@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_sass',
+    'sass_processor',
     'admin_workload',
-    'auth',
+    'appauth',
     'community_workload',
     'research_workload',
     'teaching_workload'
@@ -80,8 +82,16 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django_cockroachdb',
+        'NAME': 'workloaddatabase',
+        'USER': 'sakarian',
+        'PASSWORD': '8moOJsoW3xWZAdS_jyAKdg',
+        'HOST': 'free-tier12.aws-ap-south-1.cockroachlabs.cloud',
+        'PORT': '26257',
+        'OPTIONS': {
+            'sslmode': 'verify-full',
+            'options': '--cluster=sps-assignment-1453'
+        },
     }
 }
 
