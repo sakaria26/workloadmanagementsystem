@@ -23,6 +23,7 @@ class Course_Teaching_Load(models.Model):
     course_group = models.ForeignKey(Course_Group, on_delete=models.CASCADE)
     novelty_of_course = models.CharField(max_length=255)
     contact_time_per_week = models.IntegerField()
+    total_load_factor = models.DecimalField(max_digits=5, decimal_places=2)
 
 
     def __str__(self):
