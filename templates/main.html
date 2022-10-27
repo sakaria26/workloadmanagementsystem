@@ -7,19 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% sass_src 'style/main_style/main.scss' %}" rel="stylesheet" type="text/css" />
-    <title>Workload Management System</title>
+    <link rel="shortcut icon" href="{% static 'images/nust.svg' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <title>Workload Management - {% block pageTitle %} {% endblock %}</title>
 </head>
 <body>
-    {% include 'header_bar.html' %}
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    {% include 'header.html' %}
+    
+    <section>
+    {% include 'sidebar.html' %}
+    
+    <div class="content">
     {% block content %}
 
     {% endblock %}
+    </div>
+    </section>
+    {% include 'footer.html' %}
 </body>
 </html>
