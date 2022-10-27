@@ -1,0 +1,13 @@
+{% load sass_tags %}
+{% load static %}
+
+
+<link href="{% sass_src 'style/sidebar_style/sidebar.scss' %}" rel="stylesheet" type="text/css" />
+
+<nav class="sideBar">
+    <a href="{% url 'home' %}">Dashboard</a>
+    <a href="{% url 'teaching_load' %}">Teaching Load</a>
+    <a href="{% url 'research_load' %}">Research Load</a>
+    <a href="{% url 'admin_load' %}">Admin Load</a>
+    <a href="{% url 'community_load' %}">Community Engagement Load</a>
+</nav>
