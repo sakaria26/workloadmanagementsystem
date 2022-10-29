@@ -1,7 +1,30 @@
-
 {% extends 'main.html' %}
+{% load sass_tags %}
+{% load static %}
 {% block pageTitle %}Teaching{% endblock pageTitle %}
 
+<link href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}" rel="stylesheet" type="text/css" />
 {% block content%}
 <h1>Teaching Workload</h1>
+<a href="{% url 'add_teaching_load' %}">Add a new Teaching Load</a>
+<div class="load">
+    <h2 class="load-title">Programming 1</h2>
+    <p class="load-description">This is a description of the course</p>
+    <div class="load-action-buttons">
+        <button class="load-button">View</button>
+        <button class="load-button">Edit</button>
+        <button class="load-button">Remove</button>
+    </div>
+</div>
+
+<div class="load">
+    <h2 class="load-title">Programming 2</h2>
+    <p class="load-description">This is a description of the course</p>
+    <div class="load-action-buttons">
+        <button class="load-button">View</button>
+        <button class="load-button">Edit</button>
+        <button class="load-button">Remove</button>
+    </div>
+</div>
+
 {% endblock %}
