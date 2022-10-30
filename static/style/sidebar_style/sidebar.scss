@@ -1,11 +1,11 @@
 .sideBar{
     width: 12rem;
-    height: 100%;
+    height: 100vh;
     // left: 0;
     background-color: rgb(104, 104, 104);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.25rem;
     padding: 2rem;
 
     a{
@@ -13,8 +13,15 @@
         font-size: 1vw;
         line-height: 1;
         // color: #011627;
+        padding: 1.5rem;
         font-weight: 600;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover{
+            border: 1px;
+            background-color: rgb(73, 73, 73);
+            border-radius: 0.5rem;
+        }
     }
 }
