@@ -1,7 +1,96 @@
-
 {% extends 'main.html' %}
-{% block pageTitle %}Dashboard{% endblock pageTitle %}
 
+{% load sass_tags %}
+{% load static %}
+
+{% block pageTitle %}Dashboard{% endblock pageTitle %}
+<link href="{% sass_src 'style/home_style/home.scss' %}" rel="stylesheet" type="text/css" />
 {% block content%}
 <h1>Workload Manager</h1>
+
+<div class="backgroundSection">
+    <h2>Background</h2>
+    <article>
+        In line with the new mandate of the institution, the workload policy has been revised to keep up
+        with, new modes of teaching and learning, assessment, research, administration, community engagement and contemporary technical innovation. This policy will be used as a time management
+        tool for academic staff to ensure cost-efficiency and cost-effectiveness in academic performance
+        and delivery. All activities related to academic work identified to be valuable to students and are
+        consistent with institutional mission, are grouped and properly factored to regulate the workload
+        flexibility of individual faculty members. This flexibility is important for recognising the unique missions of the schools and their departments and the differences in mutually agreed upon activities
+        of individuals within departments. This policy is, therefore, revised to provide specific guidelines
+        to the university management and faculty regarding the optimum academic workload for faculty
+        members. It is essential that the Council and stakeholders understand the variety and complexity
+        of academic workloads, while being assured that such workloads represent a positive value for
+        the University of Science and Technology. Therefore, the Council is hereby requested to approve
+        this policy
+    </article>
+</div>
+
+<div>
+    <h2>Rationale</h2>
+    <article>
+        <p>The Polytechnic of Namibia needs a new academic workload policy for the following main reasons:</p>
+        <ol>
+            <li>The Institution has succeeded in getting acceptance in its quest to have the name of the Institution changed from “Polytechnic of Namibia” to “Namibia University of Science and Technology”.
+                Since it is already on the path of transforming to a university of science and technology, the
+                Polytechnic, therefore, needs to give significant prominence to research and scholarship as
+                part of the workload;</li>
+            <li>The academic workload policy must give recognition to those current staff members who do
+                significantly more in promoting excellence in research, teaching and administration/service;</li>
+            <li>The new academic workload policy should be reflective of the transformation of the Institution
+                from a polytechnic to a university of science and technology.</li>
+            <li>The Institution needs to employ an academic workload policy that will provide for the development of a professional academic ethos amongst its academic staff in the three main areas of
+                teaching, research and administration/service.</li>
+        </ol>
+    </article>
+</div>
+
+<div>
+    <h2>Definition of Academic Work</h2>
+    <div>
+        <h3> Teaching</h3>
+        <p>Teaching activities include:</p>
+        <ul>
+            <li>Programme and course development, including development of materials and obtaining professional accreditations,</li>
+            <li>Preparing and conducting lectures, tutorials, demonstrations and workshops and course delivery via alternative modes,</li>
+            <li>Research supervision at undergraduate level and honours,</li>
+            <li>Examination and student assessment,</li>
+            <li>Internal moderation of courses,
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3>Research</h3>
+        <p>Research activities include:
+        </p>
+        <ul>
+            <li>Undertaking and publishing research as approved by the Institutional Research and Publications Committee (IRPC),</li>
+            <li>Writing articles and other publications,</li>
+            <li>Scholarship in teaching,</li>
+            <li>Research in teaching, including localised teaching,</li>
+            <li>Undertaking higher research degrees or appropriate qualifications as defined in the Human
+                Resources Code,</li>
+        </ul>
+    </div>
+    <div>
+        <h3> Administration/Service</h3>
+        <p>Administration activities may include</p>
+        <ul>
+            <li>Programme and Course Coordination (including the coordination of Mathematics courses
+                and writing programmes);</li>
+            <li>Timetabling</li>
+            <li>Examinations Coordination;</li>
+            <li>Invigilation of examinations</li>
+            <li>Formal staff supervision</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Community Engagement</h3>
+        <p>Community Engagement activities may include</p>
+        <ul>
+            <li>Outreach activities to the community in which the staff is involved. </li>
+        </ul>
+    </div>
+</div>
+
 {% endblock %}
