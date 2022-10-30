@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load sass_tags %}
+{% load static %}
+{% block pageTitle %}Teaching{% endblock pageTitle %}
+
+<link href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}" rel="stylesheet" type="text/css" />
+{% block content%}
+<h1>Add Community Workload</h1>
+
+<div class="addNewForm">
+    Form
+</div>
+
+{% endblock %}
