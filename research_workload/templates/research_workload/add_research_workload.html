@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load sass_tags %}
+{% load static %}
+{% block pageTitle %}Teaching{% endblock pageTitle %}
+
+{% comment %} <link href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}" rel="stylesheet" type="text/css" /> {% endcomment %}
+{% block content%}
+<h1>Add Research Workload</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <button type="submit">Add New Workload</button>
+</form>
+
+
+{% endblock %}
