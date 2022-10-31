@@ -13,6 +13,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center; }
+    header .account a {
+      text-decoration: none;
+      color: white; }
+      header .account a:hover {
+        font-weight: bold; }
   header .logoutBtn {
     font-size: 1vw;
     font-weight: bold;
