@@ -15,7 +15,7 @@
       <a href="{% url 'logout' %}">Log Out</a>
       <a href="{% url 'profile' %}">Profile</a>
     {% else %}
-      <a href="/login/auth0">Login</a>
+      <a href="{% url 'login' %}">Login</a>
     {% endif %}
   </div>
 </header>

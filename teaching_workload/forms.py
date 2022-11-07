@@ -3,5 +3,5 @@ from .models import *
 
 class TeachingWorkloadForm(ModelForm):
     class Meta:
-        model = Course_Teaching_Load
+        model = Teaching_Load
         fields = '__all__'

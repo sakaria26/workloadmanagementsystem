@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,31 +41,14 @@ INSTALLED_APPS = [
 
     'django_sass',
     'sass_processor',
-    'social_django',
+    'courses',
+    'students',
     'admin_workload',
     'appauth',
     'community_workload',
     'research_workload',
     'teaching_workload'
 ]
-
-SOCIAL_AUTH_TRAINING_SLASH=False
-SOCIAL_AUTH_AUTH0_DOMAIN=config('APP_DOMAIN')
-SOCIAL_AUTH_AUTH0_KEY=config('APP_CLIENT_ID')
-SOCIAL_AUTH_AUTH0_SECRET=config('APP_CLIENT_SECRET')
-
-SOCIAL_AUTH_AUTH0_SCOPE=[
-    'openid',
-    'profile',
-    'email',
-]
-
-
-AUTHENTICATION_BACKENDS={
-    'social_core.backends.auth0.Auth0OAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-}
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -103,17 +85,24 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django_cockroachdb',
+    #     'NAME': 'workloaddatabase',
+    #     'USER': 'sakarian',
+    #     'PASSWORD': '8moOJsoW3xWZAdS_jyAKdg',
+    #     'HOST': 'free-tier12.aws-ap-south-1.cockroachlabs.cloud',
+    #     'PORT': '26257',
+    #     'OPTIONS': {
+    #         'sslmode': 'verify-full',
+    #         'options': '--cluster=sps-assignment-1453'
+    #     },
+    # }
+
+    # Fallback to sqlite3 if the database is not available.
+
     'default': {
-        'ENGINE': 'django_cockroachdb',
-        'NAME': 'workloaddatabase',
-        'USER': 'sakarian',
-        'PASSWORD': '8moOJsoW3xWZAdS_jyAKdg',
-        'HOST': 'free-tier12.aws-ap-south-1.cockroachlabs.cloud',
-        'PORT': '26257',
-        'OPTIONS': {
-            'sslmode': 'verify-full',
-            'options': '--cluster=sps-assignment-1453'
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -135,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
@@ -173,8 +163,3 @@ SASS_PROCESSOR_ROOT = STATIC_ROOT
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-LOGIN_URL='/login/auth0'
-LOGIN_REDIRECT_URL='home'
-LOGOUT_REDIRECT_URL='home'

@@ -1,41 +1,31 @@
 from django.db import models
-
+from appauth.models import Staff_Member
+from courses.models import Course, Course_Group
+from students.models import Student
 # Create your models here.
-class Course_Group(models.Model):
-    course_group_id = models.AutoField(primary_key=True)
-    course_group_name = models.CharField(max_length=255)
-    course_group_number = models.IntegerField()
-    course_group_size = models.IntegerField()
-    def __str__(self):
-        return self.name
 
-class Novelty(models.Model):
-    novelty_id = models.AutoField(primary_key=True)
-    novelty_name = models.CharField(max_length=255)
-    novelty_description = models.CharField(max_length=255)
-    def __str__(self):
-        return self.name
 
-class Course_Teaching_Load(models.Model):
-    course_teaching_load_id = models.AutoField(primary_key=True)
-    course_code = models.CharField(max_length=10)
-    course_name = models.CharField(max_length=255)
-    course_group = models.ForeignKey(Course_Group, on_delete=models.CASCADE)
-    novelty_of_course = models.CharField(max_length=255)
+NOVELTIES = (
+    ('New to Course', 'NEW TO COURSE'),
+    ('New to University', 'NEW TO UNIVERSITY'),
+    ('Old to Course', 'OLD TO COURSE'),
+    ('Old to University', 'OLD TO UNIVERSITY'),
+)
+
+class Teaching_Load(models.Model):
+    teaching_load_id = models.AutoField(primary_key=True)
+    staff_member = models.ForeignKey(Staff_Member, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    group = models.ForeignKey(Course_Group, on_delete=models.CASCADE)
+    novelty_of_course = models.CharField(max_length=255, choices=NOVELTIES, default='New to Course')
     contact_time_per_week = models.IntegerField()
-    total_load_factor = models.DecimalField(max_digits=5, decimal_places=2)
-
 
     def __str__(self):
-        return self.name
+        return str(self.staff_member.staff.first_name + ' ' + self.staff_member.staff.last_name + ' ' + str(self.course))
 
 class Honors_Supervision_Load(models.Model):
     honors_supervision_load_id = models.AutoField(primary_key=True)
-    honors_student_number = models.IntegerField()
-    honors_student_firstname = models.CharField(max_length=255)
-    honors_student_lastname = models.CharField(max_length=255)
-    honors_student_program = models.CharField(max_length=255)
-    contact_time_per_week = models.IntegerField()
+    honors_student = models.ForeignKey(Student, on_delete=models.CASCADE)
     def __str__(self):
-        return self.name
+        return self.honors_student
 
