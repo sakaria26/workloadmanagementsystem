@@ -7,7 +7,9 @@ from django.contrib.auth.decorators import login_required
 def all_teaching_workloads(request):
 
     teaching_loads = Teaching_Load.objects.all().filter(staff_member__staff=request.user)
-    context = {'teaching_workloads': teaching_loads}
+    staff_member = Staff_Member.objects.get(staff=request.user)
+    print(staff_member.staff_position)
+    context = {'teaching_workloads': teaching_loads, 'staff_member': staff_member}
     return render(request, 'teaching_workload/teaching_workload.html', context)
 
 login_required('login')

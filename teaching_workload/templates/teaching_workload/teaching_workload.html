@@ -1,34 +1,34 @@
-{% extends 'main.html' %}
-{% load sass_tags %}
-{% load static %}
-{% block pageTitle %}Teaching{% endblock pageTitle %}
+{% extends 'main.html' %} {% load sass_tags %} {% load static %} {% block pageTitle %}Teaching{% endblock pageTitle %}
 
-<link href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}" rel="stylesheet" type="text/css" />
+<link
+  href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 {% block content%}
 <h1>Teaching Workload</h1>
+{% if staff_member.staff_position == 'HoD' %}
+
 <a href="{% url 'add_teaching_load' %}">Add a new Teaching Load</a>
-
-
-{% for teaching_load in teaching_workloads %}
+{% endif %} {% for teaching_load in teaching_workloads %}
 <div class="load">
-    <h2 class="load-title">{{teaching_load.course.course_code}} - {{teaching_load.course.course_name}}</h2>
-    <div class="load-description">
-        <p>Group - {{teaching_load.group.course_group_mode}} {{teaching_load.group.course_group_session}} {{teaching_load.group.course_group_number}}</p>
-        <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
-        <p>Contact Time - {{teaching_load.contact_time_per_week}}</p>
-
-    </div>
-    <div class="load-action-buttons">
-        <button class="load-button">View</button>
-        <button class="load-button">Edit</button>
-        <button class="load-button">Remove</button>
-    </div>
+  <h2 class="load-title">
+    {{teaching_load.course.course_code}} - {{teaching_load.course.course_name}}
+  </h2>
+  <div class="load-description">
+    <p>
+      Group - {{teaching_load.group.course_group_mode}}
+      {{teaching_load.group.course_group_session}}
+      {{teaching_load.group.course_group_number}}
+    </p>
+    <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
+    <p>Contact Time - {{teaching_load.contact_time_per_week}}</p>
+  </div>
+  <div class="load-action-buttons">
+    <button class="load-button">View</button>
+    <button class="load-button">Edit</button>
+    <button class="load-button">Remove</button>
+  </div>
 </div>
-    
-{% endfor %}
 
-
-{% endblock %}
-
-
-
+{% endfor %} {% endblock %}

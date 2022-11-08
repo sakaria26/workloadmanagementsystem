@@ -1,16 +1,15 @@
-{% extends 'main.html' %}
-{% load sass_tags %}
-{% load static %}
-{% block pageTitle %}Teaching{% endblock pageTitle %}
+{% extends 'main.html' %} {% load sass_tags %} {% load static %} {% block pageTitle %}Teaching{% endblock pageTitle %}
 
-<link href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}" rel="stylesheet" type="text/css" />
+<link
+  href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
+  rel="stylesheet"
+  type="text/css"
+/>
 {% block content%}
 <h1>Add Teaching Workload</h1>
-
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_div }}
-    <button type="submit">Add</button>
+  {% csrf_token %} {{ form.as_div }}
+  <button type="submit">Add</button>
 </form>
 
 {% endblock %}

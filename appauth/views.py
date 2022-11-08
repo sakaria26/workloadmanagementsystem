@@ -9,6 +9,8 @@ def home_view(request):
     return render(request, 'appauth/home.html', {})
 
 def login_user(request):
+    user = None
+    staff_member = None
     if request.user.is_authenticated:
         return redirect('home')
 
@@ -22,7 +24,7 @@ def login_user(request):
             messages.error(request, "Incorrect Username or Password")
 
         user = authenticate(request, username=username, password=password)
-
+        staff_member = Staff_Member.objects.get(staff=user)
         if user is not None:
             if user.is_active:
                 login(request, user)
@@ -33,7 +35,8 @@ def login_user(request):
         else:
             messages.error(request, "Username or Password Does Not Exist")
 
-    return render(request, "appauth/login.html", {})
+    context = {'user': user, 'staff_member': staff_member}
+    return render(request, "appauth/login.html", context)
 
 def profile(request):
     user = request.user

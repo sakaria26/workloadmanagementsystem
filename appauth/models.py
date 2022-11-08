@@ -18,5 +18,8 @@ class Staff_Member(models.Model):
     staff_number = models.IntegerField(_('staff number'), unique=True)
     staff_position = models.CharField(max_length=25, choices=STAFF_POSITIONS, default='Lecturer')
 
+    def __str__(self):
+        return str(self.staff.first_name + ' ' + self.staff.last_name)
 
+ 
 
