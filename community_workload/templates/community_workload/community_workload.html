@@ -4,6 +4,22 @@
 
 {% block content%}
 <h1>Community Engagement Workload</h1>
-<a href="{% url 'add_community_load' %}">Add a new Community Engagement Load</a>
+<a href="{% url 'add_community_load' %}" class="btn btn-primary">Add a new Community Engagement Load</a>
 
+{% for community_load in community_workloads %}
+<div class="load">
+  <h2 class="load-title">
+    {{community_load}}
+  </h2>
+  <div class="load-description">
+    <p>
+      Semester - {{community_load.semester}}
+    </p>
+    <p>Hours Per Semester - {{community_load.hours_per_semester}}</p>
+    <a href="" class="btn btn-primary">Edit</a>
+  </div>
+  
+</div>
+
+{% endfor %} 
 {% endblock %}
