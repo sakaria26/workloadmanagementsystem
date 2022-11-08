@@ -24,6 +24,18 @@ def add_teaching_workloads(request):
     context = {'form': form, 'message': message}
     return render(request, 'teaching_workload/teaching_workload_form.html', context)
 
+def edit_teaching_workloads(request, teaching_load_id):
+    teaching_load = Teaching_Load.objects.get(teaching_load_id=teaching_load_id)
+    form = TeachingWorkloadEditForm(request.POST or None, instance=teaching_load)
+    message = None
+    if form.is_valid():
+        message = messages.success(request, 'Teaching Workload Edited Successfully')
+        form.save()
+        return redirect('teaching_load')
+
+    context = {'form': form, 'message': message}
+    return render(request, 'teaching_workload/edit_teaching_workload.html', context)
+
 # def remove_teaching_workloads(request):
 #     teaching_load = Teaching_Load.objects.get(staff_member__staff=request.user)
 #     if request.method == 'POST':

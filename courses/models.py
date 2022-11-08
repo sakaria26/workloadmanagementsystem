@@ -16,7 +16,7 @@ class Course (models.Model):
     course_code = models.CharField(max_length=10, primary_key=True)
     course_name = models.CharField(max_length=255)
     def __str__(self):
-        return self.course_name
+        return str(self.course_code + ' - ' + self.course_name)
 
 class Programme (models.Model):
     programme_code = models.CharField(max_length=10, primary_key=True)
