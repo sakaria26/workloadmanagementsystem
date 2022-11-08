@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load sass_tags %}
+{% block pageTitle %}Admin{% endblock pageTitle %}
+
+
+{% block content %}
+<h1>Edit Administrative Load</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+
+        <!-- <div class="form-group">
+            <label for="research_topic">Research Topic</label>
+            <input type="text" class="form-control" id="research_topic" name="research_topic" value="{{research_load.research_topic}}">
+        </div>
+        <div class="form-group">
+            <label for="research_status">Research Status</label>
+            <input type="text" class="form-control" id="research_status" name="research_status" value="{{research_load.research_status}}">
+        </div>
+        <div class="form-group">
+            <label for="co_researcher">Co Researcher</label>
+            <input type="text" class="form-control" id="co_researcher" name="co_researcher" value="{{research_load.co_researcher}}">
+        </div> -->
+        {{form.as_div}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+</form>
+{% endblock content %}
+    
