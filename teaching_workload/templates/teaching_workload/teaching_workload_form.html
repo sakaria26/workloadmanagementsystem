@@ -10,8 +10,8 @@
 {% block content%}
 <h1>Add Teaching Workload</h1>
 <form method="post">
-  {% csrf_token %} {{ form.as_div }}
-  <button type="submit">Add</button>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Add Workload</button>
 </form>
 
 
