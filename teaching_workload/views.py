@@ -5,6 +5,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+login_required(login_url='login')
 def all_teaching_workloads(request):
 
     teaching_loads = Teaching_Load.objects.all().filter(staff_member__staff=request.user)
@@ -12,7 +13,7 @@ def all_teaching_workloads(request):
     context = {'teaching_workloads': teaching_loads, 'staff_member': staff_member}
     return render(request, 'teaching_workload/teaching_workload.html', context)
 
-login_required('login')
+login_required(login_url='login')
 def add_teaching_workloads(request):
     form = TeachingWorkloadForm(request.POST or None)
     message = None
