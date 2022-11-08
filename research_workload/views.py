@@ -18,3 +18,17 @@ def add_research_workloads(request):
 
     context = {"form": form}
     return render(request, 'research_workload/add_research_workload.html', context)
+
+def edit_research_workloads(request, research_load_id):
+    research_load = Research_Load.objects.get(research_load_id=research_load_id)
+    form = ResearchWorkloadEditForm(request.POST or None, instance=research_load)
+    message = None
+    if request.method == 'POST':
+        if form.is_valid():
+            message = messages.success(request, 'Research Workload Edited Successfully')
+            form.save()
+            return redirect('research_load')
+   
+
+    context = {"form": form, "research_load": research_load, "message": message}
+    return render(request, 'research_workload/edit_research_workload.html', context)

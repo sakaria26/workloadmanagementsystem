@@ -18,7 +18,7 @@ class Co_Researcher(models.Model):
     co_researcher_email = models.CharField(max_length=255)
     co_researcher_phone = models.CharField(max_length=255)
     def __str__(self):
-        return str(self.co_researcher_firstname + " " +self.co_researcher_lastname)
+        return str(self.co_researcher_title + ' ' + self.co_researcher_firstname + " " +self.co_researcher_lastname)
 
 class Funding(models.Model):
     funding_id = models.AutoField(primary_key=True)
