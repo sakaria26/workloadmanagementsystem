@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CommunityWorkloadForm
+from .forms import *
 from .models import *
 
 # Create your views here.
@@ -17,3 +17,12 @@ def add_community_workload(request):
         return redirect('community_load')
     context = {"form": form}
     return render(request, 'community_workload/add_community_load.html', context)
+
+def edit_community_workload(request, id):
+    community_workload = CommunityWorkload.objects.get(id=id)
+    form = CommunityWorkloadEditForm(request.POST or None, instance=community_workload)
+    if form.is_valid():
+        form.save()
+        return redirect('community_load')
+    context = {"form": form}
+    return render(request, 'community_workload/edit_community_load.html', context)
