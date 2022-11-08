@@ -4,7 +4,7 @@
 
 {% block content%}
 <h1>Community Engagement Workload</h1>
-<a href="{% url 'add_community_load' %}" class="btn btn-primary">Add a new Community Engagement Load</a>
+<a href="{% url 'add_community_load' %}" class="btn btn-primary">Add New Workload</a>
 
 {% for community_load in community_workloads %}
 <div class="load">
@@ -16,7 +16,7 @@
       Semester - {{community_load.semester}}
     </p>
     <p>Hours Per Semester - {{community_load.hours_per_semester}}</p>
-    <a href="{% url 'edit_community_load' community_load.id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'edit_community_load' community_load.id %}" class="btn btn-primary">Edit Community Engagement Load</a>
   </div>
   
 </div>

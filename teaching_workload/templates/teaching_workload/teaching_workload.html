@@ -9,7 +9,7 @@
 <h1>Teaching Workload</h1>
 {% if staff_member.staff_position != 'HoD' %}
 
-<a href="{% url 'add_teaching_load' %}" class="btn btn-primary">Add</a>
+<a href="{% url 'add_teaching_load' %}" class="btn btn-primary">Add New Workload</a>
 {% endif %} {% for teaching_load in teaching_workloads %}
 <div class="load">
   <h2 class="load-title">
@@ -23,7 +23,7 @@
     </p>
     <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
     <p>Contact Time - {{teaching_load.contact_time_per_week}}</p>
-    <a href="{% url 'edit_teaching_load' teaching_load.teaching_load_id %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'edit_teaching_load' teaching_load.teaching_load_id %}" class="btn btn-primary">Edit Teaching Load</a>
   </div>
   
 </div>
