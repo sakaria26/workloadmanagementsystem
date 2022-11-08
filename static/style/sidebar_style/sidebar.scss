@@ -19,8 +19,9 @@
         text-transform: uppercase;
 
         &:hover{
+            color: #f7f8f9;
             border: 1px;
-            background-color: rgb(73, 73, 73);
+            background-color: #fbb10f;
             border-radius: 0.5rem;
         }
     }

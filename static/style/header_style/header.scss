@@ -1,42 +1,39 @@
-header{
-  height: 7rem;
+header {
+  position: relative;
+  height: 5rem;
   width: 100%;
-  display: flex;
   top: 0;
-  justify-content: space-around;
 
-
-  .logo{
-    display: flex;
+  .logo {
+    position: absolute;
+    left: 30px;
     align-items: center;
-      a{
-      img{
-        width: 6vw;
+    width: 4rem;
+    a {
+      img {
+        width: 100%;
       }
     }
-    
   }
 
-  .account{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a{
+  .account {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    a {
       text-decoration: none;
       color: white;
 
-      &:hover{
+      &:hover {
         font-weight: bold;
       }
     }
   }
 
-  .logoutBtn{
+  .logoutBtn {
     font-size: 1vw;
     font-weight: bold;
     width: 6rem;
     height: 3rem;
   }
-  
 }
- 

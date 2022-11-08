@@ -15,8 +15,9 @@
     text-decoration: none;
     text-transform: uppercase; }
     .sideBar a:hover {
+      color: #f7f8f9;
       border: 1px;
-      background-color: #494949;
+      background-color: #fbb10f;
       border-radius: 0.5rem; }
 
 /*# sourceMappingURL=sidebar.css.map */

@@ -2,20 +2,33 @@
 {% load static %}
 
 
-<link href="{% sass_src 'style/header_style/header.scss' %}" rel="stylesheet" type="text/css" />
+<!-- <link href="{% sass_src 'style/header_style/header.scss' %}" rel="stylesheet" type="text/css" /> -->
 
-<header class="header">
+<header class="header navbar navbar-expand-lg navbar-light bg-light" style="background-color: #15285D !important;">
   <div class="logo">
     <!-- TODO: Fix Logo not geting css -->
-    <a href="{% url 'home' %}"><img src="{% static 'images/nust.svg' %}" alt="Logo"/></a>
+    <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/nust.svg' %}" alt="Logo" width="50" height="50"/></a>
   </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+      {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a href="{% url 'logout' %}" class="text-light">Log Out</a>
+      </li>
+      <li class="nav-item active">
 
-  <div class="account">
-    {% if user.is_authenticated %}
-      <a href="{% url 'logout' %}">Log Out</a>
-      <a href="{% url 'profile' %}">Profile</a>
-    {% else %}
-      <a href="{% url 'login' %}">Login</a>
-    {% endif %}
+        <a href="{% url 'profile' %}" class="text-light">Profile</a>
+      </li>
+      {% else %}
+      <li class="nav-item active text-light">
+        <a href="{% url 'login' %}" class="text-light">Login</a>
+
+      </li>
+      {% endif %}
+    </ul>
   </div>
 </header>
+
