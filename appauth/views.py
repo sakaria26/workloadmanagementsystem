@@ -2,10 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+
+
 from .models import *
+from teaching_workload.models import *
+from community_workload.models import *
+from admin_workload.models import *
+from research_workload.models import *
+
 
 # Create your views here.
 def home_view(request):
+
     return render(request, 'appauth/home.html', {})
 
 def login_user(request):
