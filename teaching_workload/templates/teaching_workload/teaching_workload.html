@@ -7,7 +7,7 @@
 />
 {% block content%}
 <h1>Teaching Workload</h1>
-{% if staff_member.staff_position == 'HoD' %}
+{% if staff_member.staff_position != 'HoD' %}
 
 <a href="{% url 'add_teaching_load' %}">Add a new Teaching Load</a>
 {% endif %} {% for teaching_load in teaching_workloads %}
@@ -24,11 +24,9 @@
     <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
     <p>Contact Time - {{teaching_load.contact_time_per_week}}</p>
   </div>
-  <div class="load-action-buttons">
-    <button class="load-button">View</button>
-    <button class="load-button">Edit</button>
-    <button class="load-button">Remove</button>
-  </div>
+  
 </div>
 
-{% endfor %} {% endblock %}
+{% endfor %} 
+
+{% endblock %}

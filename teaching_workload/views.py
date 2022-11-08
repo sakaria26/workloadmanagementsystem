@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
@@ -8,17 +9,27 @@ def all_teaching_workloads(request):
 
     teaching_loads = Teaching_Load.objects.all().filter(staff_member__staff=request.user)
     staff_member = Staff_Member.objects.get(staff=request.user)
-    print(staff_member.staff_position)
     context = {'teaching_workloads': teaching_loads, 'staff_member': staff_member}
     return render(request, 'teaching_workload/teaching_workload.html', context)
 
 login_required('login')
 def add_teaching_workloads(request):
     form = TeachingWorkloadForm(request.POST or None)
-
+    message = None
     if form.is_valid():
+        message = messages.success(request, 'Teaching Workload Added Successfully')
         form.save()
         return redirect('teaching_load')
 
-    context = {'form': form}
+    context = {'form': form, 'message': message}
     return render(request, 'teaching_workload/teaching_workload_form.html', context)
+
+# def remove_teaching_workloads(request):
+#     teaching_load = Teaching_Load.objects.get(staff_member__staff=request.user)
+#     if request.method == 'POST':
+#         teaching_load.delete()
+#         message = messages.success(request, 'Teaching Workload Deleted Successfully')
+#         return redirect('teaching_load')
+
+#     context = {'item': teaching_load, 'message': message}
+#     return render(request, 'teaching_workload/teaching_workload.html', context)
