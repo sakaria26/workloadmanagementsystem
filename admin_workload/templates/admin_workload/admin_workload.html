@@ -4,7 +4,7 @@
 
 {% block content%}
 <h1>Admin Workload</h1>
-<p>Variance: {{admin_load_variance}}%</p>
+<!-- <p>Variance: {{admin_load_variance}}%</p> -->
 {% if staff_member.staff_position == 'HoD' %}
 <a href="{% url 'add_admin_load' %}" class="btn btn-primary">Add New Workload</a>
 {% endif %}

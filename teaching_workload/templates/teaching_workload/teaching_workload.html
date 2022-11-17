@@ -8,13 +8,7 @@ type="text/css"
 href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
 />
 <h1>Teaching Workload</h1>
-<p><b>Variance</b>: {{teaching_load_variance}}% , 
-
-
-  <b>High Variance</b>
-
-  
-</p>
+<!-- <p><b>Variance</b>: {{teaching_load_variance}}% , <b>High Variance</b></p> -->
 {% if staff_member.staff_position == 'HoD' %}
 
 <a href="{% url 'add_teaching_load' %}" class="btn btn-primary">Add New Workload</a>

@@ -12,7 +12,13 @@
     {% csrf_token %}
     {{ form.as_div }}
     <br>
-    <button type="submit" class="btn btn-success">Add Workload</button>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a href="{% url 'community_load' %}" class="btn btn-danger">Cancel</a>
+        </div>
 </form>
 
 

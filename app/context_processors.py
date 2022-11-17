@@ -10,6 +10,7 @@ def global_workload_summary(request):
     admin_loads = AdminWorkload.objects.all().filter(staff_member__staff=request.user)
     community_loads = CommunityWorkload.objects.all().filter(staff_member__staff=request.user)
 
+
     teaching_load_count = teaching_loads.count()
     research_load_count = research_loads.count()
     admin_load_count = admin_loads.count()

@@ -14,7 +14,7 @@ from research_workload.models import *
 # Create your views here.
 def home_view(request):
 
-    return render(request, 'appauth/home.html', {})
+    return render(request, 'appauth/home.html')
 
 def login_user(request):
     user = None
@@ -36,7 +36,7 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return redirect('home')
+                return redirect('dashboard')
             else:
                 print('The user ', user)
                 messages.error(request, "Account is disabled")
@@ -46,6 +46,7 @@ def login_user(request):
     context = {'user': user, 'staff_member': staff_member}
     return render(request, "appauth/login.html", context)
 
+@login_required(login_url='login')
 def profile(request):
     user = request.user
     staff_member = Staff_Member.objects.get(staff=user)

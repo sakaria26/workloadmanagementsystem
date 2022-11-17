@@ -4,7 +4,7 @@
 
 {% block content%}
 <h1>Community Engagement Workload</h1>
-<p>Variance: {{community_load_variance}}%</p>
+<!-- <p>Variance: {{community_load_variance}}%</p> -->
 <a href="{% url 'add_community_load' %}" class="btn btn-primary">Add New Workload</a>
 
 {% for community_load in community_workloads %}
