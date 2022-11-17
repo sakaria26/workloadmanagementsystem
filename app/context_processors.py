@@ -30,6 +30,6 @@ def global_workload_summary(request):
         'staff_member': staff_member,
         'teaching_load_variance': teaching_load_variance,
         'research_load_variance': research_load_variance,
-        'admin_load_variance': admin_load_variance,
+        'admin_load_variance': admin_load_variance, 
         'community_load_variance': community_load_variance,}
  

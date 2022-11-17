@@ -8,21 +8,15 @@
 <h1>Edit Community Load</h1>
 <form action="" method="POST">
     {% csrf_token %}
-
-        <!-- <div class="form-group">
-            <label for="research_topic">Research Topic</label>
-            <input type="text" class="form-control" id="research_topic" name="research_topic" value="{{research_load.research_topic}}">
+    {{form.as_p}}
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="submit" class="btn btn-success">Save</button>
         </div>
-        <div class="form-group">
-            <label for="research_status">Research Status</label>
-            <input type="text" class="form-control" id="research_status" name="research_status" value="{{research_load.research_status}}">
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a href="{% url 'community_load' %}" class="btn btn-danger">Cancel</a>
         </div>
-        <div class="form-group">
-            <label for="co_researcher">Co Researcher</label>
-            <input type="text" class="form-control" id="co_researcher" name="co_researcher" value="{{research_load.co_researcher}}">
-        </div> -->
-        {{form.as_p}}
-        <button type="submit" class="btn btn-success">Save Changes</button>
+    </div>
         
 </form>
 {% endblock content %}

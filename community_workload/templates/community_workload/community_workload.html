@@ -4,6 +4,7 @@
 
 {% block content%}
 <h1>Community Engagement Workload</h1>
+<p>Variance: {{community_load_variance}}%</p>
 <a href="{% url 'add_community_load' %}" class="btn btn-primary">Add New Workload</a>
 
 {% for community_load in community_workloads %}
@@ -17,7 +18,14 @@
     </p>
     <p>Hours Per Semester - {{community_load.hours_per_semester}}</p>
     <hr>
-    <a href="{% url 'edit_community_load' community_load.id %}" class="btn btn-primary">Edit Community Engagement Load</a>
+    <div class="toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <a href="{% url 'edit_community_load' community_load.id %}" class="btn btn-primary">Edit</a>
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
   </div>
   
 </div>

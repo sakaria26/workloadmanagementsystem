@@ -34,7 +34,14 @@ href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
     <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
     <p>Contact Time/Week - {{teaching_load.contact_time_per_week}}</p>
     <hr>
-    <a href="{% url 'edit_teaching_load' teaching_load.teaching_load_id %}" class="btn btn-primary">Edit Teaching Load</a>
+    <div class="toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <a href="{% url 'edit_teaching_load' teaching_load.teaching_load_id %}" class="btn btn-primary">Edit</a>
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
   </div>
   
 </div>

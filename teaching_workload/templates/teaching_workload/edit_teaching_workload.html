@@ -8,9 +8,15 @@
 <h1>Edit Teaching Load</h1>
 <form action="" method="POST">
     {% csrf_token %}
-
-        {{form.as_p}}
-        <button type="submit" class="btn btn-success">Save Changes</button>
+    {{form.as_p}}
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a href="{% url 'teaching_load' %}" class="btn btn-danger">Cancel</a>
+        </div>
+    </div>
         
 </form>
 {% endblock content %}

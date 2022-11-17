@@ -4,6 +4,7 @@
 
 {% block content%}
 <h1>Admin Workload</h1>
+<p>Variance: {{admin_load_variance}}%</p>
 {% if staff_member.staff_position == 'HoD' %}
 <a href="{% url 'add_admin_load' %}" class="btn btn-primary">Add New Workload</a>
 {% endif %}
@@ -13,7 +14,14 @@
     <p>Activity Type - {{admin_load.activity_type}}</p>
     <p>Hours Per Semester - {{admin_load.hours_per_semester}}</p>
     <hr>
-    <a href="{% url 'edit_admin_load' admin_load.id %}" class="btn btn-primary">Edit Administrative Load</a>
+    <div class="toolbar" role="toolbar" aria-label="Toolbar with Button Groups">
+      <div class="btn-group mr-2" role="group" aria-label="First group">
+        <a href="{% url 'edit_admin_load' admin_load.id %}" class="btn btn-primary">Edit</a>
+      </div>
+      <div class="btn-group mr-2" role="group" aria-label="Second group">
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
 </div>
 {% endfor %}
     
