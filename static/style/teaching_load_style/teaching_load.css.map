@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "teaching_load.css",
+	"sources": [
+		"teaching_load.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,KAAK,CAAA;EACD,MAAM,EAAE,SAAS;EACjB,gBAAgB,EAAE,OAAO;EACzB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,MAAM;EACf,UAAU,EAAE,sBAAsB,GAcrC;EAnBD,AAaQ,KAbH,CAYD,iBAAiB,CACb,EAAE,CAAA;IACE,KAAK,EAAE,IAAI,GACd"
+}

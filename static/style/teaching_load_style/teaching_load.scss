@@ -1,12 +1,21 @@
 .load{
-    margin: 0 auto;
-    border: 2px solid black;
+    margin: 1rem auto;
+    background-color: #f8f9f9;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 3px 3px 3px  #88888890;
+    // .load-title{
+    //     font-size: 20px;
+    //     font-weight: bold;
+    //     margin-bottom: 10px;
+    // }
 
-    .load-title{
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
+    .load-description{
+        hr{
+            color: aqua;
+        }
     }
+
     
 }
 

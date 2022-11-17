@@ -5,6 +5,7 @@
 <link href="{% sass_src 'style/sidebar_style/sidebar.scss' %}" rel="stylesheet" type="text/css" />
 
 <nav class="sideBar bg-light">
+    <a href="{% url 'dashboard' %}" class="text-dark">Dashboard</a>
     <a href="{% url 'teaching_load' %}" class="text-dark ">Teaching Load</a>
     <a href="{% url 'research_load' %}" class="text-dark">Research Load</a>
     <a href="{% url 'admin_load' %}" class="text-dark">Admin Load</a>

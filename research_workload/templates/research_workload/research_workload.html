@@ -8,20 +8,32 @@
 
 {% for research_load in research_loads %}
     
-<div class="load">
-    <h2 class="load-title">
-      {{research_load.research_topic}}
-    </h2>
-    <div class="load-description">
-        <p>
-        Status - {{research_load.research_status}}
-        </p>
-        <p>
-          Co Researcher - {{research_load.co_researcher}}
-        </p>
-    </div>
-    <a href="{% url 'edit_research_load' research_load.research_load_id %}" class="btn btn-primary" >Edit Research Load</a>
-  </div>
+    {% if research_load.research_status != 'Rejected' %}
+      
+    <div class="load">
+        <h2 class="load-title">
+          {{research_load.research_topic}}
+        </h2>
+        <div class="load-description">
+            <p>
+            Status - {{research_load.research_status}}
+            </p>
+            <p>
+              Co Researcher - {{research_load.co_researcher}}
+            </p>
+        </div>
+        <hr>
+        <div class="btn-toolber" role="toolbar" aria-label="Toolbar with Button Groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <a href="{% url 'edit_research_load' research_load.research_load_id %}" class="btn btn-primary">Edit</a>
+          </div>
+          <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a href="#" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+      
 {% endfor %}
     
 {% endblock %}

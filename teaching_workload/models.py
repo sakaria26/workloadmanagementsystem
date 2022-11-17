@@ -18,7 +18,9 @@ class Teaching_Load(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     group = models.ForeignKey(Course_Group, on_delete=models.CASCADE)
     novelty_of_course = models.CharField(max_length=255, choices=NOVELTIES, default='New to Course')
+    # is_coordinating = models.BooleanField(default=False)
     contact_time_per_week = models.IntegerField()
+    # total_load_factor = models.FloatField()
 
     def __str__(self):
         return str(self.staff_member.staff.first_name + ' ' + self.staff_member.staff.last_name + ' ' + str(self.course))

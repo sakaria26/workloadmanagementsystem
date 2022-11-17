@@ -8,10 +8,12 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='login')
 def all_teaching_workloads(request):
 
-    teaching_loads = Teaching_Load.objects.all().filter(staff_member__staff=request.user)
-    staff_member = Staff_Member.objects.get(staff=request.user)
-    context = {'teaching_workloads': teaching_loads, 'staff_member': staff_member}
-    return render(request, 'teaching_workload/teaching_workload.html', context)
+
+    # teaching_loads = Teaching_Load.objects.all().filter(staff_member__staff=request.user)
+    # teaching_load_count = teaching_loads.count()
+    # staff_member = Staff_Member.objects.get(staff=request.user)
+    # context = {'teaching_workloads': teaching_loads, 'staff_member': staff_member, 'teaching_load_count': teaching_load_count}
+    return render(request, 'teaching_workload/teaching_workload.html', {})
 
 @login_required(login_url='login')
 def add_teaching_workloads(request):

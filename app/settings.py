@@ -22,9 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n1_$^bpvwt+3(4t3*#ps!bstvv@p98h7%lay)hsaebtb$35%7@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'workloadmanagementsystem.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'workloadmanagementsystem.herokuapp.com', '8177-41-182-13-66.eu.ngrok.io']
+
+CSRF_TRUSTED_ORIGINS = ['https://8177-41-182-13-66.eu.ngrok.io']
 
 
 # Application definition
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
 
     'django_sass',
     'sass_processor',
+    'dashboard',
     'courses',
     'students',
     'admin_workload',
@@ -74,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.context_processors.global_workload_summary',
             ],
         },
     },

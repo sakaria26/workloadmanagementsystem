@@ -1,7 +1,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box; }
 
 /*
@@ -9,12 +11,13 @@
 */
 * {
   margin: 0;
-  font-family: 'Inter', sans-serif; }
+  font-family: "Inter", sans-serif; }
 
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%; }
 
 /*
@@ -29,26 +32,45 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%; }
 
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit; }
 
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word; }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700; }
+
+p, b {
+  font-family: 'Text Me One', sans-serif; }
 
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate; }
 
 header {
@@ -64,5 +86,11 @@ section {
     margin-left: 3rem;
     margin-right: 3rem;
     min-height: calc(100vh - 7rem); }
+    section .content .load {
+      margin: 1rem auto;
+      background-color: #f8f9f9;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 3px 3px 3px #88888890; }
 
 /*# sourceMappingURL=main.css.map */

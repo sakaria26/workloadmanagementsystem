@@ -1,32 +1,44 @@
-{% extends 'main.html' %} {% load sass_tags %} {% load static %} {% block pageTitle %}Teaching{% endblock pageTitle %}
+{% extends 'main.html' %} {% load sass_tags %} {% load static %} 
 
-<link
-  href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
-  rel="stylesheet"
-  type="text/css"
-/>
+
 {% block content%}
+<link
+rel="stylesheet"
+type="text/css"
+href="{% sass_src 'style/teaching_load_style/teaching_load.scss' %}"
+/>
 <h1>Teaching Workload</h1>
-{% if staff_member.staff_position != 'HoD' %}
+<p><b>Variance</b>: {{teaching_load_variance}}% , 
+
+
+  <b>High Variance</b>
+
+  
+</p>
+{% if staff_member.staff_position == 'HoD' %}
 
 <a href="{% url 'add_teaching_load' %}" class="btn btn-primary">Add New Workload</a>
-{% endif %} {% for teaching_load in teaching_workloads %}
+{% endif %} {% for teaching_load in teaching_loads %}
 <div class="load">
   <h2 class="load-title">
     {{teaching_load.course}}
   </h2>
+  
+  
   <div class="load-description">
     <p>
-      Group - {{teaching_load.group.course_group_mode}}
+      Course Group - {{teaching_load.group.course_group_mode}}
       {{teaching_load.group.course_group_session}}
       {{teaching_load.group.course_group_number}}
     </p>
     <p>Novelty of Course - {{teaching_load.novelty_of_course}}</p>
-    <p>Contact Time - {{teaching_load.contact_time_per_week}}</p>
+    <p>Contact Time/Week - {{teaching_load.contact_time_per_week}}</p>
+    <hr>
     <a href="{% url 'edit_teaching_load' teaching_load.teaching_load_id %}" class="btn btn-primary">Edit Teaching Load</a>
   </div>
   
 </div>
+
 
 {% endfor %} 
 
