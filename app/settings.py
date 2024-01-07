@@ -90,20 +90,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django_cockroachdb',
-    #     'NAME': 'workloaddatabase',
-    #     'USER': 'sakarian',
-    #     'PASSWORD': '8moOJsoW3xWZAdS_jyAKdg',
-    #     'HOST': 'free-tier12.aws-ap-south-1.cockroachlabs.cloud',
-    #     'PORT': '26257',
-    #     'OPTIONS': {
-    #         'sslmode': 'verify-full',
-    #         'options': '--cluster=sps-assignment-1453'
-    #     },
-    # }
-
-    # Fallback to sqlite3 if the database is not available.
+    
 
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
