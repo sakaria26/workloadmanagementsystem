@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +24,9 @@ SECRET_KEY = 'django-insecure-n1_$^bpvwt+3(4t3*#ps!bstvv@p98h7%lay)hsaebtb$35%7@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'workloadmanagementsystem.herokuapp.com', '8177-41-182-13-66.eu.ngrok.io']
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", "0e73-41-182-127-205.ngrok-free.app"]
 
-CSRF_TRUSTED_ORIGINS = ['https://8177-41-182-13-66.eu.ngrok.io']
+CSRF_TRUSTED_ORIGINS = ['https://0e73-41-182-127-205.ngrok-free.app']
 
 
 # Application definition
@@ -143,11 +143,9 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
-STATICFILES_DIRS = [
-    
-]
-
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 SASS_PROCESSOR_ROOT = STATIC_ROOT

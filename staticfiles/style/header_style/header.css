@@ -1,0 +1,28 @@
+header {
+  position: relative;
+  height: 5rem;
+  width: 100%;
+  top: 0; }
+  header .logo {
+    position: absolute;
+    left: 30px;
+    align-items: center;
+    width: 4rem; }
+    header .logo a img {
+      width: 100%; }
+  header .account {
+    position: absolute;
+    top: 50%;
+    right: 10px; }
+    header .account a {
+      text-decoration: none;
+      color: white; }
+      header .account a:hover {
+        font-weight: bold; }
+  header .logoutBtn {
+    font-size: 1vw;
+    font-weight: bold;
+    width: 6rem;
+    height: 3rem; }
+
+/*# sourceMappingURL=header.css.map */
